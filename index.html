@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas Pastels | Galletas Navideñas</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fffaf5;
+  color: #51464a;
+}
+
+header {
+  background: #f5e1e5;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  color: #a4546c;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #68545a;
+  text-decoration: none;
+  margin: 8px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #b45d77;
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #f8e8e9, #edf3e9);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 65px);
+  color: #a4546c;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.boton {
+  display: inline-block;
+  background: #a4546c;
+  color: white;
+  padding: 13px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+section {
+  padding: 65px 9%;
+}
+
+h2 {
+  text-align: center;
+  color: #a4546c;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.intro {
+  text-align: center;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.tarjeta {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 4px 15px #00000010;
+  border: 1px solid #f1e4e2;
+}
+
+.tarjeta h3 {
+  color: #718b78;
+  margin-bottom: 12px;
+}
+
+.tarjeta p {
+  line-height: 1.7;
+}
+
+.fondo-verde {
+  background: #edf3e9;
+}
+
+.fondo-rosa {
+  background: #f9ebed;
+}
+
+.producto {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  border: 1px solid #f0dfe2;
+}
+
+.producto .emoji {
+  font-size: 55px;
+  margin-bottom: 12px;
+}
+
+.producto h3 {
+  color: #a4546c;
+  margin-bottom: 10px;
+}
+
+.precio {
+  color: #718b78;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+footer {
+  background: #a4546c;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  line-height: 1.8;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🎄 Christmas Pastels</div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#ingredientes">Ingredientes</a>
+    <a href="#beneficios">Nutrición</a>
+    <a href="#preparacion">Preparación</a>
+    <a href="#productos">Productos</a>
+  </nav>
+</header>
+
+<div class="hero" id="inicio">
+  <h1>Christmas Pastels</h1>
+  <p>Una Navidad llena de dulzura, sabor y magia.</p>
+  <p>Galletas navideñas elaboradas con cariño para compartir momentos especiales.</p>
+  <a class="boton" href="#productos">Descubre nuestras galletas 🍪</a>
+</div>
+
+<section>
+  <h2>♡ Sobre nosotros ♡</h2>
+  <div class="intro">
+    <p>
+      Christmas Pastels es un emprendimiento dedicado a la
+      elaboración de galletas navideñas decoradas.
+      Nuestro objetivo es ofrecer productos deliciosos,
+      creativos y especiales para compartir durante la Navidad.
+      Cada galleta está preparada con dedicación y una
+      presentación inspirada en la magia de estas fiestas.
+    </p>
+  </div>
+</section>
+
+<section class="fondo-verde" id="ingredientes">
+  <h2>¿De qué están hechas nuestras galletas?</h2>
+  <div class="contenedor">
+
+    <div class="tarjeta">
+      <h3>🌾 Harina</h3>
+      <p>Aporta carbohidratos, que son una fuente de energía para el cuerpo.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>🧈 Mantequilla</h3>
+      <p>Contiene grasas que proporcionan energía y ayudan a absorber algunas vitaminas.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>🥚 Huevo</h3>
+      <p>Aporta proteínas, importantes para el crecimiento y mantenimiento de los tejidos.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>🍬 Azúcar</h3>
+      <p>Aporta energía, aunque debe consumirse con moderación.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>🌼 Vainilla</h3>
+      <p>Proporciona un aroma y sabor agradable a nuestras galletas.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="beneficios">
+  <h2>¿Qué aportan a nuestro cuerpo?</h2>
+  <div class="intro">
+    <p>
+      Nuestras galletas contienen ingredientes que aportan
+      diferentes nutrientes. La harina y el azúcar proporcionan
+      energía; el huevo aporta proteínas y la mantequilla
+      contiene grasas. Son un postre para disfrutar
+      ocasionalmente dentro de una alimentación variada.
+    </p>
+  </div>
+</section>
+
+<section class="fondo-rosa" id="preparacion">
+  <h2>¿Cómo elaboramos nuestras galletas?</h2>
+  <div class="contenedor">
+
+    <div class="tarjeta">
+      <h3>01. Mezclamos</h3>
+      <p>Unimos la mantequilla, el azúcar, el huevo y la vainilla.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>02. Preparamos</h3>
+      <p>Agregamos la harina y formamos una masa uniforme.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>03. Damos forma</h3>
+      <p>Estiramos la masa y cortamos figuras navideñas.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>04. Horneamos</h3>
+      <p>Horneamos las galletas hasta que estén ligeramente doradas.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>05. Decoramos</h3>
+      <p>Agregamos glaseado de colores y detalles navideños.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="productos">
+  <h2>Nuestros productos 🍪</h2>
+  <div class="contenedor">
+
+    <div class="producto">
+      <div class="emoji">⭐</div>
+      <h3>Galletas de estrellas</h3>
+      <p>Decoradas con glaseado navideño.</p>
+      <p class="precio">Precio: próximamente</p>
+    </div>
+
+    <div class="producto">
+      <div class="emoji">🎄</div>
+      <h3>Galletas de árboles</h3>
+      <p>Con diseños inspirados en la Navidad.</p>
+      <p class="precio">Precio: próximamente</p>
+    </div>
+
+    <div class="producto">
+      <div class="emoji">❄️</div>
+      <h3>Galletas de copos</h3>
+      <p>Decoradas con detalles de invierno.</p>
+      <p class="precio">Precio: próximamente</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="fondo-verde" id="contacto">
+  <h2>¡Gracias por visitarnos! ♡</h2>
+  <div class="intro">
+    <p>
+      Christmas Pastels: pequeños detalles,
+      grandes momentos y mucha dulzura.
+    </p>
+    <p style="margin-top:15px">
+      <strong>Contacto:</strong> Próximamente agregaremos
+      nuestros datos para pedidos.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <h3>🎄 Christmas Pastels 🍪</h3>
+  <p>Hecho con cariño y espíritu navideño.</p>
+  <p>© 2026 Christmas Pastels. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
