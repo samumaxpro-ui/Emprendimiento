@@ -420,8 +420,13 @@ footer p {
   <p>© 2026 Christmas Pastels. Todos los derechos reservados.</p>
 </footer>
 
+
 <script>
-// Precios oficiales del catálogo
+// Datos de conexión con Supabase
+const SUPABASE_URL = "https://zsemjqsbjsyxogyiueta.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_CuWCgPBm0uf-DhKLiguOtQ_WETqa4Ai";
+
+// Precios oficiales
 const precios = {
   estrellas: 5,
   arboles: 5,
@@ -459,7 +464,7 @@ function actualizarResumen() {
       total += subtotal;
 
       lineas.push(
-        `${nombres[id]}: ${cantidad} x S/5 = S/${subtotal.toFixed(2)}`
+        `<p>${nombres[id]}: ${cantidad} x S/5 = S/${subtotal.toFixed(2)}</p>`
       );
     }
   });
@@ -467,12 +472,12 @@ function actualizarResumen() {
   const resumen = document.getElementById("resumen");
 
   if (lineas.length === 0) {
-    resumen.innerHTML = "Selecciona tus galletas para ver el resumen.";
+    resumen.textContent = "Selecciona tus galletas para ver el resumen.";
     return;
   }
 
   resumen.innerHTML = `
-    ${lineas.map(linea => `<p>${linea}</p>`).join("")}
+    ${lineas.join("")}
     <hr>
     <p class="total">Total: S/${total.toFixed(2)}</p>
   `;
@@ -509,27 +514,52 @@ document.getElementById("formPedido").addEventListener("submit", async function(
     return;
   }
 
-  const pedido = {
-    cliente,
-    telefono,
-    direccion,
-    productos
-  };
+  boton.disabled = true;
+  mensaje.textContent = "Enviando tu pedido...";
 
-  /*
-    La conexión con Supabase se añadirá cuando
-    configuremos la función segura que recibe pedidos.
-    No se guardan pedidos en esta versión todavía.
-  */
+  try {
+    const respuesta = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/crear_pedido`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`
+        },
+        body: JSON.stringify({
+          p_cliente: cliente,
+          p_telefono: telefono,
+          p_direccion: direccion,
+          p_productos: productos
+        })
+      }
+    );
 
-  mensaje.textContent =
-    "El formulario está preparado. Estamos configurando la recepción segura de pedidos.";
+    if (!respuesta.ok) {
+      const error = await respuesta.text();
+      console.error("Error de Supabase:", error);
+      throw new Error("No se pudo registrar el pedido.");
+    }
 
-  console.log("Pedido de prueba:", pedido);
+    const pedidoId = await respuesta.json();
+
+    mensaje.textContent =
+      `¡Pedido registrado correctamente! Número de pedido: ${pedidoId}. Estado: Pendiente.`;
+
+    document.getElementById("formPedido").reset();
+    actualizarResumen();
+
+  } catch (error) {
+    console.error(error);
+    mensaje.textContent =
+      "No se pudo enviar el pedido. Inténtalo nuevamente.";
+  } finally {
+    boton.disabled = false;
+  }
 });
 
 actualizarResumen();
 </script>
-
 </body>
 </html>
