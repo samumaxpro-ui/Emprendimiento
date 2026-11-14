@@ -69,8 +69,10 @@ nav a:hover {
   background: #a4546c;
   color: white;
   padding: 13px 25px;
+  border: none;
   border-radius: 25px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 section {
@@ -148,6 +150,55 @@ h2 {
   margin-top: 12px;
 }
 
+.cantidad {
+  width: 75px;
+  padding: 10px;
+  margin-top: 15px;
+  border: 1px solid #e5cbd1;
+  border-radius: 9px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.formulario {
+  max-width: 650px;
+  margin: 25px auto 0;
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px #00000010;
+}
+
+.formulario label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: bold;
+  color: #a4546c;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5cbd1;
+  border-radius: 9px;
+  font: inherit;
+}
+
+.resumen {
+  background: #edf3e9;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  line-height: 2;
+}
+
+.total {
+  font-size: 23px;
+  font-weight: bold;
+  color: #a4546c;
+}
+
 footer {
   background: #a4546c;
   color: white;
@@ -160,6 +211,26 @@ footer p {
   font-size: 14px;
 }
 
+#mensaje {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media(max-width:600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+  }
+
+  section {
+    padding: 45px 6%;
+  }
+}
 </style>
 </head>
 
@@ -173,6 +244,7 @@ footer p {
     <a href="#beneficios">Nutrición</a>
     <a href="#preparacion">Preparación</a>
     <a href="#productos">Productos</a>
+    <a href="#pedidos">Pedidos</a>
   </nav>
 </header>
 
@@ -200,32 +272,26 @@ footer p {
 <section class="fondo-verde" id="ingredientes">
   <h2>¿De qué están hechas nuestras galletas?</h2>
   <div class="contenedor">
-
     <div class="tarjeta">
       <h3>🌾 Harina</h3>
       <p>Aporta carbohidratos, que son una fuente de energía para el cuerpo.</p>
     </div>
-
     <div class="tarjeta">
       <h3>🧈 Mantequilla</h3>
       <p>Contiene grasas que proporcionan energía y ayudan a absorber algunas vitaminas.</p>
     </div>
-
     <div class="tarjeta">
       <h3>🥚 Huevo</h3>
       <p>Aporta proteínas, importantes para el crecimiento y mantenimiento de los tejidos.</p>
     </div>
-
     <div class="tarjeta">
       <h3>🍬 Azúcar</h3>
       <p>Aporta energía, aunque debe consumirse con moderación.</p>
     </div>
-
     <div class="tarjeta">
       <h3>🌼 Vainilla</h3>
       <p>Proporciona un aroma y sabor agradable a nuestras galletas.</p>
     </div>
-
   </div>
 </section>
 
@@ -245,73 +311,105 @@ footer p {
 <section class="fondo-rosa" id="preparacion">
   <h2>¿Cómo elaboramos nuestras galletas?</h2>
   <div class="contenedor">
-
     <div class="tarjeta">
       <h3>01. Mezclamos</h3>
       <p>Unimos la mantequilla, el azúcar, el huevo y la vainilla.</p>
     </div>
-
     <div class="tarjeta">
       <h3>02. Preparamos</h3>
       <p>Agregamos la harina y formamos una masa uniforme.</p>
     </div>
-
     <div class="tarjeta">
       <h3>03. Damos forma</h3>
       <p>Estiramos la masa y cortamos figuras navideñas.</p>
     </div>
-
     <div class="tarjeta">
       <h3>04. Horneamos</h3>
       <p>Horneamos las galletas hasta que estén ligeramente doradas.</p>
     </div>
-
     <div class="tarjeta">
       <h3>05. Decoramos</h3>
       <p>Agregamos glaseado de colores y detalles navideños.</p>
     </div>
-
   </div>
 </section>
 
 <section id="productos">
   <h2>Nuestros productos 🍪</h2>
-  <div class="contenedor">
+  <p class="intro">¡Elige tus galletas favoritas y combina diferentes diseños!</p>
 
+  <div class="contenedor">
     <div class="producto">
       <div class="emoji">⭐</div>
       <h3>Galletas de estrellas</h3>
       <p>Decoradas con glaseado navideño.</p>
-      <p class="precio">Precio: próximamente</p>
+      <p class="precio">S/ 5.00</p>
+      <label for="estrellas">Cantidad:</label>
+      <br>
+      <input class="cantidad" id="estrellas" type="number" min="0" max="50" value="0">
     </div>
 
     <div class="producto">
       <div class="emoji">🎄</div>
       <h3>Galletas de árboles</h3>
       <p>Con diseños inspirados en la Navidad.</p>
-      <p class="precio">Precio: próximamente</p>
+      <p class="precio">S/ 5.00</p>
+      <label for="arboles">Cantidad:</label>
+      <br>
+      <input class="cantidad" id="arboles" type="number" min="0" max="50" value="0">
     </div>
 
     <div class="producto">
       <div class="emoji">❄️</div>
       <h3>Galletas de copos</h3>
       <p>Decoradas con detalles de invierno.</p>
-      <p class="precio">Precio: próximamente</p>
+      <p class="precio">S/ 5.00</p>
+      <label for="copos">Cantidad:</label>
+      <br>
+      <input class="cantidad" id="copos" type="number" min="0" max="50" value="0">
     </div>
-
   </div>
 </section>
 
-<section class="fondo-verde" id="contacto">
+<section class="fondo-verde" id="pedidos">
+  <h2>Realiza tu pedido 🎁</h2>
+  <p class="intro">
+    Selecciona las cantidades que deseas, completa tus datos
+    y envía tu pedido.
+  </p>
+
+  <div class="formulario">
+    <h3 style="color:#a4546c;text-align:center">Tu pedido</h3>
+
+    <div class="resumen" id="resumen">
+      Selecciona tus galletas para ver el resumen.
+    </div>
+
+    <form id="formPedido">
+      <label for="cliente">Nombre completo</label>
+      <input id="cliente" type="text" maxlength="100" required>
+
+      <label for="telefono">Teléfono de contacto</label>
+      <input id="telefono" type="tel" maxlength="20" required>
+
+      <label for="direccion">Dirección o lugar de entrega</label>
+      <textarea id="direccion" rows="3" maxlength="250" required></textarea>
+
+      <button class="boton" id="botonEnviar" type="submit">
+        Enviar pedido
+      </button>
+
+      <p id="mensaje" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section id="contacto">
   <h2>¡Gracias por visitarnos! ♡</h2>
   <div class="intro">
     <p>
       Christmas Pastels: pequeños detalles,
       grandes momentos y mucha dulzura.
-    </p>
-    <p style="margin-top:15px">
-      <strong>Contacto:</strong> Próximamente agregaremos
-      nuestros datos para pedidos.
     </p>
   </div>
 </section>
@@ -321,6 +419,117 @@ footer p {
   <p>Hecho con cariño y espíritu navideño.</p>
   <p>© 2026 Christmas Pastels. Todos los derechos reservados.</p>
 </footer>
+
+<script>
+// Precios oficiales del catálogo
+const precios = {
+  estrellas: 5,
+  arboles: 5,
+  copos: 5
+};
+
+const nombres = {
+  estrellas: "Galletas de estrellas",
+  arboles: "Galletas de árboles",
+  copos: "Galletas de copos"
+};
+
+const campos = ["estrellas", "arboles", "copos"];
+
+function obtenerCantidad(id) {
+  const campo = document.getElementById(id);
+  const valor = Number(campo.value);
+
+  if (!Number.isInteger(valor) || valor < 0 || valor > 50) {
+    return 0;
+  }
+
+  return valor;
+}
+
+function actualizarResumen() {
+  let total = 0;
+  let lineas = [];
+
+  campos.forEach(id => {
+    const cantidad = obtenerCantidad(id);
+
+    if (cantidad > 0) {
+      const subtotal = cantidad * precios[id];
+      total += subtotal;
+
+      lineas.push(
+        `${nombres[id]}: ${cantidad} x S/5 = S/${subtotal.toFixed(2)}`
+      );
+    }
+  });
+
+  const resumen = document.getElementById("resumen");
+
+  if (lineas.length === 0) {
+    resumen.innerHTML = "Selecciona tus galletas para ver el resumen.";
+    return;
+  }
+
+  resumen.innerHTML = `
+    ${lineas.map(linea => `<p>${linea}</p>`).join("")}
+    <hr>
+    <p class="total">Total: S/${total.toFixed(2)}</p>
+  `;
+}
+
+campos.forEach(id => {
+  document.getElementById(id).addEventListener("input", actualizarResumen);
+});
+
+document.getElementById("formPedido").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const mensaje = document.getElementById("mensaje");
+  const boton = document.getElementById("botonEnviar");
+
+  const productos = campos
+    .map(id => ({
+      producto: id,
+      cantidad: obtenerCantidad(id)
+    }))
+    .filter(item => item.cantidad > 0);
+
+  if (productos.length === 0) {
+    mensaje.textContent = "Selecciona por lo menos un producto.";
+    return;
+  }
+
+  const cliente = document.getElementById("cliente").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+  const direccion = document.getElementById("direccion").value.trim();
+
+  if (!cliente || !telefono || !direccion) {
+    mensaje.textContent = "Completa todos tus datos.";
+    return;
+  }
+
+  const pedido = {
+    cliente,
+    telefono,
+    direccion,
+    productos
+  };
+
+  /*
+    La conexión con Supabase se añadirá cuando
+    configuremos la función segura que recibe pedidos.
+    No se guardan pedidos en esta versión todavía.
+  */
+
+  mensaje.textContent =
+    "El formulario está preparado. Estamos configurando la recepción segura de pedidos.";
+
+  console.log("Pedido de prueba:", pedido);
+});
+
+actualizarResumen();
+</script>
 
 </body>
 </html>
